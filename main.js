@@ -22,9 +22,9 @@ function numbertoWords(){
         for(let j = 0; j < lenofNum; j++){
             let word = numberConversion.get(numString[j]);
             temp.push(word);
-            
         }
-        main.push(temp);
+        let combinedWords = temp.join('');
+        main.push(combinedWords);
     }
     console.log(main);
 }
