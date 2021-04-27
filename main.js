@@ -1,21 +1,23 @@
+let scriptArguments = process.argv.slice(2);
+
 //HashMap to reference what word to replace each number with(Also if the Number is Negative)
 const numberConversion = new Map([
-    ['-', 'negative'],
-    ['0', 'zero'],
-    ['1', 'one'],
-    ['2', 'two'],
-    ['3', 'three'],
-    ['4', 'four'],
-    ['5', 'five'],
-    ['6', 'six'],
-    ['7', 'seven'],
-    ['8', 'eight'],
-    ['9', 'nine']
+    ['-', 'Negative'],
+    ['0', 'Zero'],
+    ['1', 'One'],
+    ['2', 'Two'],
+    ['3', 'Three'],
+    ['4', 'Four'],
+    ['5', 'Five'],
+    ['6', 'Six'],
+    ['7', 'Seven'],
+    ['8', 'Eight'],
+    ['9', 'Nine']
 ]);
 
 //Function to Convert the Numbers into Words(By Digit)
-function numbertoWords(...arguments){
-    let numbers = arguments;
+function numbertoWords(){
+    let numbers = scriptArguments;
     let main = [];
     //Loop to Go Through Each Number in the Array that is Passed
     for(let i = 0; i < numbers.length; i++){
@@ -30,7 +32,7 @@ function numbertoWords(...arguments){
         let combinedWords = temp.join('');
         main.push(combinedWords);
     }
-    console.log(main);
+    console.log(main.toString());
 }
 
-numbertoWords(32,323,4543,53445,3424,3434,-23,53,42,31,23,14,11,334,10000000000000);
+numbertoWords();
